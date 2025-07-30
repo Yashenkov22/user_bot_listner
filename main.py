@@ -9,7 +9,7 @@ from telethon import types
 
 api_id = 25430288
 api_hash = "08616908140d6688f2e0107805741d9d"
-session_name = "my_userbot"
+# session_name = "my_userbot"
 
 loop = asyncio.get_event_loop()
 
