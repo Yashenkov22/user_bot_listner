@@ -44,7 +44,7 @@ PATTERNS = {
     # '$': r"\$",
     'доллары': r"\bдоллары\w*\b",
     'баксы': r"\bбаксы\w*\b",
-    'руб': r"\bруб\w*\b",
+    # 'руб': r"\bруб\w*\b",
     'rub': r"\brub\w*\b",
     'лиры': r"\bлиры\w*\b",
 }
@@ -57,9 +57,11 @@ async def listen_any_message(event):
 
 async def process_event(event):
     text = event.raw_text.lower()
+    # async for dialog in client.iter_dialogs():
+    #     print(f"Название: {dialog.name} | ID: {dialog.id} | Тип: {type(dialog.entity)}")
     # msg = event.message
 
-    if event.sender.bot:
+    if not event.sender or event.sender.bot:
         return
 
     chat_to = '@test_userbot22'
@@ -74,6 +76,8 @@ async def process_event(event):
 
             # print('user', user_data)
                 chat: types.Channel = event.chat
+
+                print('chat', chat.__dict__)
 
                 chat_username = chat.username
                 chat_name = chat.title
