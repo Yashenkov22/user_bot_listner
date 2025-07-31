@@ -49,6 +49,20 @@ PATTERNS = {
     # 'лиры': r"\bлиры\w*\b",
 }
 
+BLACK_LIST_PATTERNS = (
+    r"\bпиши в личку\w*\b",
+    r"\bпиши в лc\w*\b",
+    r"\bпишите в личные сообщения\w*\b",
+    r"\bвыкупаем\w*\b",
+    r"\bбуду благодарен за репост\w*\b",
+    r"\bжду вас в – лс\w*\b",
+    r"\bпиши мне \"+\"\w*\b",
+    r"\bкупим ваш\w*\b",
+    r"\bкурс вам понравится\w*\b",
+    r"\bлучший курс\w*\b",
+
+)
+
 
 @client.on(events.NewMessage)
 async def listen_any_message(event):
@@ -70,6 +84,10 @@ async def process_event(event):
         try:
             # print(f'проверяю {pattern_word}...')
             if re.search(pattern, text):
+                # black list words
+                if any(re.search(black_pattern, text) for black_pattern in BLACK_LIST_PATTERNS):
+                    print('black pattern!')
+                    return
                 # print('успешно')
 
                 user_data = event.sender
