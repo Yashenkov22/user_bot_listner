@@ -357,6 +357,20 @@ BLACK_PATTERN = (
     r"ДOΠЛАТA ЗA ОƃMΕH",
     r"большие деньги",
 
+    r"SPRINGFIELD CHANGE",
+    r"Фиксированный курс",
+    r"арендовать",
+    r"аренда",
+    r"ⲃ личныe cообщeʜия",
+    r"ПОКᎩПАЮ И ΠРOДAЮ",
+    r"Напишите нам",
+    r"Гибκий κурc",
+    r"КoнՓидeʜциальʜо",
+    r"популярные монеты",
+    r"По всем вопросам",
+    r"Быстрая выдача",
+    r"Безопасные сделки",
+
 )
 
 BLACK_LIST_PATTERNS = [re.compile(p, re.IGNORECASE) for p in BLACK_PATTERN]
