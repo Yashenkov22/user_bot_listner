@@ -471,6 +471,20 @@ BLACK_PATTERN = (
     r"u.s.d.t",
     r"Другие валюты",
 
+    r"помочь",
+    r"валюті",
+    r"грн",
+    r"Ищете",
+    r"специальный",
+    r"прмокод",
+    r"флирт",
+    r"Flinra",
+    r"анонимно",
+    r"сбор",
+    r"доплатой",
+    r"NovaEx",
+    r"легкие",
+
 )
 
 BLACK_LIST_PATTERNS = [re.compile(p, re.IGNORECASE) for p in BLACK_PATTERN]
